@@ -1,29 +1,210 @@
-import { TeamMember, Playlist, Page } from './types';
+import { TeamMember, Playlist, Page, GalleryItem, ServiceEvent } from './types';
 
-export const NAV_LINKS: Page[] = ['Home', 'About Us', 'Sermons', 'Contact', 'Podcast', 'Donations'];
+export const NAV_LINKS: Page[] = ['Home', 'About Us', 'Gallery', 'Services', 'Contact', 'Give'];
 
 export const NAV_LABELS: Record<Page, string> = {
   Home: 'Home',
   'About Us': 'About Us',
+  Gallery: 'Gallery',
+  Services: 'Services',
+  Contact: 'Contact Us',
+  Give: 'Give',
   Sermons: 'Sermons',
-  Contact: 'Contact',
   Podcast: 'Podcast',
   Donations: 'Donations',
 };
 
 export const PAGE_PATHS: Record<Page, string> = {
   Home: '/',
-  'About Us': '/about',
+  'About Us': '#about',
+  Gallery: '#gallery',
+  Services: '#services',
+  Contact: '#contact',
+  Give: '#give',
   Sermons: '/sermons',
-  Contact: '/contact',
   Podcast: '/podcast',
   Donations: '/donations',
 };
 
+export const HERO_SLIDES = [
+  {
+    id: 1,
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2023/06/DSC01319-scaled.jpg',
+    fallback: 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+  },
+  {
+    id: 2,
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01397-scaled.jpg',
+    fallback: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01585-scaled.jpg',
+    fallback: 'https://images.unsplash.com/photo-1492176273113-2d51f47b23b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+  },
+  {
+    id: 4,
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01110-scaled.jpg',
+    fallback: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80',
+  },
+];
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    name: 'Lilian',
+    role: 'Worship Team Leader',
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01397-scaled.jpg',
+  },
+  {
+    name: 'Pastor Peter',
+    role: 'Senior Pastor',
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2023/06/DSC01319-scaled.jpg',
+  },
+  {
+    name: 'Maryam',
+    role: 'Worship Team',
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01585-scaled.jpg',
+  },
+];
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: '1',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2023/06/DSC01319-scaled.jpg',
+    category: 'ceremony',
+    likes: 3,
+  },
+  {
+    id: '2',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01397-scaled.jpg',
+    category: 'events',
+    likes: 6,
+  },
+  {
+    id: '3',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01585-scaled.jpg',
+    category: 'ceremony',
+    likes: 2,
+  },
+  {
+    id: '4',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01110-scaled.jpg',
+    category: 'short',
+    likes: 1,
+  },
+  {
+    id: '5',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01086-scaled.jpg',
+    category: 'events',
+    likes: 1,
+  },
+  {
+    id: '6',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01772-scaled.jpg',
+    category: 'ceremony',
+    likes: 2,
+  },
+  {
+    id: '7',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC00688-scaled.jpg',
+    category: 'events',
+    likes: 1,
+  },
+  {
+    id: '8',
+    title: "Father's Heart",
+    imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01524-scaled.jpg',
+    category: 'short',
+    likes: 0,
+  },
+];
+
+export const SERVICE_EVENTS: ServiceEvent[] = [
+  {
+    id: 'sm1',
+    title: 'Saturday Meeting',
+    timeStart: '4:00 pm',
+    timeEnd: '5:00 pm',
+    description: '',
+    category: 'saturday',
+  },
+  {
+    id: 'sm2',
+    title: 'Saturday Meeting',
+    timeStart: '5:00 pm',
+    timeEnd: '6:00 pm',
+    description: '',
+    category: 'saturday',
+  },
+  {
+    id: 'sg1',
+    title: 'Social Gathering',
+    timeStart: '6:00 pm',
+    timeEnd: '7:00 pm',
+    description: 'Snacks and drinks available. Dinner is provided once a month.',
+    category: 'social',
+  },
+  {
+    id: 'mt1',
+    title: 'Media Team Meetup',
+    timeStart: '5:00 pm',
+    timeEnd: '6:00 pm',
+    description: 'All Media Team should be present.',
+    category: 'media',
+  },
+  {
+    id: 'mt2',
+    title: 'Media Team Meetup',
+    timeStart: '6:00 pm',
+    timeEnd: '7:00 pm',
+    description: 'All Media Team should be present.',
+    category: 'media',
+  },
+  {
+    id: 'sg2',
+    title: 'Social Gathering',
+    timeStart: '7:00 pm',
+    timeEnd: '8:00 pm',
+    description: 'Snacks and drinks available. Dinner is provided once a month.',
+    category: 'social',
+  },
+  {
+    id: 'mt3',
+    title: 'Media Team Meetup',
+    timeStart: '7:00 pm',
+    timeEnd: '8:00 pm',
+    description: 'All Media Team should be present.',
+    category: 'media',
+  },
+  {
+    id: 'sg3',
+    title: 'Social Gathering',
+    timeStart: '8:00 pm',
+    timeEnd: '9:00 pm',
+    description: 'Snacks and drinks available. Dinner is provided once a month.',
+    category: 'social',
+  },
+  {
+    id: 'sg4',
+    title: 'Social Gathering',
+    timeStart: '9:00 pm',
+    timeEnd: '10:00 pm',
+    description: 'Snacks and drinks available. Dinner is provided once a month.',
+    category: 'social',
+  },
+];
+
 export const CONTENT = {
   home: {
-    title: "Father’s Heart Ministry",
-    subtitle: "Encounter the Father’s love. Be healed, equipped, and sent.",
+    title: "Father's Heart Ministry",
+    subtitle: "Encounter the Father's love. Be healed, equipped, and sent.",
     cta: "Watch Latest Sermons",
     joinUsTitle: "Join Us in Person",
     joinUsText: "Join our meeting every Saturday at 04:00 PM",
@@ -39,7 +220,7 @@ export const CONTENT = {
     title: "About Our Ministry",
     subtitle: "Sharing the Gospel and the vision of Father's Heart Ministry.",
     missionTitle: "Our Mission",
-    missionText: "Father’s Heart Ministry exists to create a space where everyone can encounter the transformative love of God the Father. We are committed to sharing the Gospel, leading people into a personal relationship with Jesus Christ, and fostering a community where healing, restoration, and spiritual growth are nurtured.",
+    missionText: "Father's Heart Ministry exists to create a space where everyone can encounter the transformative love of God the Father. We are committed to sharing the Gospel, leading people into a personal relationship with Jesus Christ, and fostering a community where healing, restoration, and spiritual growth are nurtured.",
     visionTitle: "Our Vision",
     visionText: "Our vision is to see lives changed by the power of the Holy Spirit. We aim to be a place where visitors find not just a church, but a family—experiencing deep healing, lasting peace, and full restoration. We seek to disciple believers, equipping them to walk in their God-given purpose and sending them out to impact the world for Christ.",
     teamTitle: "Meet Our Team"
@@ -73,24 +254,13 @@ export const CONTENT = {
   },
   donations: {
     title: "Support Our Ministry",
-    subtitle: "Every gift helps spread the Father’s love and transform lives. Thank you for your generosity and partnership in the Gospel.",
+    subtitle: "Every gift helps spread the Father's love and transform lives. Thank you for your generosity and partnership in the Gospel.",
     optionsTitle: "Donation Options",
     insideCanada: "Inside Canada",
     outsideCanada: "Outside Canada",
     redirectText: "You will be redirected to our secure donation platform."
   }
 };
-
-export const TEAM_MEMBERS: TeamMember[] = [
-  { name: 'Pastor Peter El Maasrany', role: 'Lead Pastor', imageUrl: 'https://picsum.photos/seed/peter/200' },
-  { name: 'Pastor Liliane El Maasrany', role: 'Co-Pastor', imageUrl: 'https://picsum.photos/seed/liliane/200' },
-  { name: 'Yosif Butrus', role: 'Camera Operator', imageUrl: 'https://picsum.photos/seed/peter/200' }, // Using available placeholders for team if not provided
-  { name: 'Hijran Oshana', role: 'Camera Operator', imageUrl: 'https://picsum.photos/seed/peter/200' },
-  { name: 'Savan Kajo', role: 'Camera Operator', imageUrl: 'https://picsum.photos/seed/peter/200' },
-  { name: 'Mohanad Shukri', role: 'Picture Editor', imageUrl: 'https://picsum.photos/seed/peter/200' },
-  { name: 'Steven Fahmy', role: 'Lighting', imageUrl: 'https://picsum.photos/seed/peter/200' },
-  { name: 'Rita Shaker', role: 'Production Designer', imageUrl: 'https://picsum.photos/seed/peter/200' },
-];
 
 export const PLAYLISTS: Playlist[] = [
   {
@@ -116,8 +286,8 @@ export const PLAYLISTS: Playlist[] = [
   },
   {
     id: 'PLg8vlxqLvRxta_Ju68J9NjmHt0yMQ2tGK',
-    title: 'تفعيل الحمايه الله الألهيه / God\'s Divine Protection Activation',
-    description: 'Learn how to activate and walk in God\'s divine protection.',
+    title: "تفعيل الحمايه الله الألهيه / God's Divine Protection Activation",
+    description: "Learn how to activate and walk in God's divine protection.",
     url: 'https://youtube.com/playlist?list=PLg8vlxqLvRxta_Ju68J9NjmHt0yMQ2tGK&si=_DzHYjJ2qEUxsNWZ',
     thumbnail: 'https://res.cloudinary.com/dyjffxbef/image/upload/v1766519491/Screenshot_2025-12-23_115101_csvqnk.png',
   },
@@ -151,7 +321,7 @@ export const PLAYLISTS: Playlist[] = [
   },
   {
     id: 'PLg8vlxqLvRxtedTo4o2-Sg6FZYnz02IXs',
-    title: 'God\'s Calling / دعوه الله',
+    title: "God's Calling / دعوه الله",
     description: 'Discovering and responding to the call of God.',
     url: 'https://youtube.com/playlist?list=PLg8vlxqLvRxtedTo4o2-Sg6FZYnz02IXs&si=jjzJ5bt9-QQleg-h',
     thumbnail: 'https://res.cloudinary.com/dyjffxbef/image/upload/v1766519966/Screenshot_2025-12-23_115909_s7nx6i.png',
@@ -180,7 +350,7 @@ export const PLAYLISTS: Playlist[] = [
   {
     id: 'PLg8vlxqLvRxsvaymsZp8qRoxczs-0_tKX',
     title: 'Who is the greater in the kingdom of heaven? / فمن هو أعظم في ملكوت السموات؟',
-    description: 'Jesus\' teachings on greatness in the Kingdom.',
+    description: "Jesus' teachings on greatness in the Kingdom.",
     url: 'https://youtube.com/playlist?list=PLg8vlxqLvRxsvaymsZp8qRoxczs-0_tKX&si=i009-1qeS-jzl-NE',
     thumbnail: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
   },
@@ -223,10 +393,10 @@ export const PLAYLISTS: Playlist[] = [
 
 export const PODCASTS: Playlist[] = [
   {
-    id: 'placeholder-podcast',
+    id: 'latest-episodes',
     title: 'Coffee With Shepherd - Latest Episodes',
-    description: 'Join us for insightful conversations. New episodes coming soon.',
-    url: 'https://www.coffeewithshepherd.com/#/episodes',
-    thumbnail: 'https://images.unsplash.com/photo-1478737270239-2f02b77ac6d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    description: 'Listen to the latest episodes of Coffee With Shepherd.',
+    thumbnail: 'https://images.unsplash.com/photo-1507874457470-272b3c2181bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    url: 'https://www.coffeewithshepherd.com/#/episodes'
   }
 ];

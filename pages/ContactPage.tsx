@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { YoutubeIcon, FacebookIcon, InstagramIcon, TikTokIcon, MapPinIcon } from '../components/icons';
-import { CONTENT } from '../constants';
 import SEO from '../components/SEO';
 
 const socialLinks = [
@@ -13,83 +12,178 @@ const socialLinks = [
 const ContactPage: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const mailTo = `mailto:info@coffeewithshpherd.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`;
-  const t = CONTENT.contact;
+
+  const handleSend = (e: React.FormEvent) => {
+    e.preventDefault();
+    const mailTo = `mailto:savan.kajo@yahoo.com?subject=${encodeURIComponent(subject || 'Message from Website')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    window.location.href = mailTo;
+  };
+
+  const inputClass = 'mt-1 block w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#1a3a5c] focus:border-[#1a3a5c] hover:border-[#1a3a5c]/40 transition-colors duration-300 bg-gray-50';
 
   return (
-    <div className="bg-cream min-h-screen font-body">
-      <SEO 
-        title="Contact" 
-        description="Get in touch with Father's Heart Ministry. Visit us at our Surrey location, send a message, or connect with us on social media." 
+    <div className="bg-gray-50 min-h-screen font-body">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Father's Heart Church. Visit us at 10167 148 St, Surrey, BC or email info@fathersheartchurch.ca."
       />
-      
-      <div className="container mx-auto px-4 py-20">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold font-heading text-olive mb-4">{t.title}</h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">{t.subtitle}</p>
-        </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-8 grid md:grid-cols-2 gap-10">
-          <div>
-            <h2 className="text-3xl font-bold font-heading text-olive mb-6">{t.formTitle}</h2>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">{t.nameLabel}</label>
-                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-olive focus:border-olive hover:border-olive transition-colors duration-300" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">{t.emailLabel}</label>
-                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-olive focus:border-olive hover:border-olive transition-colors duration-300" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">{t.messageLabel}</label>
-                <textarea id="message" value={message} onChange={(e) => setMessage(e.target.value)} rows={4} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-olive focus:border-olive hover:border-olive transition-colors duration-300"></textarea>
-              </div>
-              <div>
-                <a
-                  href={mailTo}
-                  className="w-full inline-flex justify-center py-3 px-4 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-flame hover:bg-flame/90 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-flame"
-                >
-                  {t.sendButton}
-                </a>
-              </div>
-            </form>
-          </div>
-          
+      {/* Page Hero */}
+      <div className="bg-[#1a3a5c] py-16 text-center">
+        <p className="text-[#D4AF37] font-semibold tracking-[0.3em] text-sm uppercase mb-3">Reach Out</p>
+        <h1 className="text-5xl font-bold font-heading text-white">CONTACT US</h1>
+        <div className="w-16 h-1 bg-[#D4AF37] mx-auto mt-4 rounded-full" />
+      </div>
+
+      <div className="container mx-auto px-4 py-16 max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Left: Info + Map */}
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold font-heading text-olive mb-3">{t.connectTitle}</h3>
-              <div className="flex space-x-4 gap-4">
-                {socialLinks.map(link => (
-                  <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-olive hover:text-flame transition-all duration-300 transform hover:scale-110">{link.icon}</a>
-                ))}
+            {/* Contact Info Cards */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#1a3a5c] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#1a3a5c] mb-1">Our Address</h3>
+                  <p className="text-gray-600">10167 148 St, Surrey, BC</p>
+                </div>
               </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold font-heading text-olive mb-3">{t.locationTitle}</h3>
-              <p className="text-gray-700">{t.meetingText}</p>
-              <p className="font-semibold text-gray-800 mb-4">10167 148 St, Surrey, BC V3R 3X2</p>
-              
-              <div className="w-full h-56 rounded-lg overflow-hidden shadow-md border border-gray-200 mb-4 hover:shadow-lg transition-shadow duration-300">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  title="Church Location Map"
-                  src="https://maps.google.com/maps?q=10167+148+St,+Surrey,+BC+V3R+3X2&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                  frameBorder="0" 
-                  scrolling="no" 
-                  marginHeight={0} 
-                  marginWidth={0}
-                  className="w-full h-full"
-                ></iframe>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#1a3a5c] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#1a3a5c] mb-1">Email</h3>
+                  <a href="mailto:info@fathersheartchurch.ca" className="text-[#D4AF37] hover:underline">
+                    info@fathersheartchurch.ca
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#1a3a5c] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#1a3a5c] mb-1">Service Times</h3>
+                  <p className="text-gray-600">Every Saturday from 4:00 PM</p>
+                </div>
               </div>
 
-              <a href="https://www.google.com/maps?q=10167+148+St,+Surrey,+BC+V3R+3X2" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-olive hover:text-flame hover:underline font-semibold transition-all duration-300 gap-2 hover:translate-x-1">
-                <MapPinIcon />
-                <span>{t.getDirections}</span>
-              </a>
+              {/* Social */}
+              <div>
+                <h3 className="font-bold text-[#1a3a5c] mb-3">Follow Us</h3>
+                <div className="flex gap-3">
+                  {socialLinks.map(link => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.name}
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-[#1a3a5c] hover:bg-[#1a3a5c] hover:text-white transition-all duration-300"
+                    >
+                      {link.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
+
+            {/* Map */}
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 aspect-video">
+              <iframe
+                title="Father's Heart Church Map"
+                src="https://maps.google.com/maps?q=10167+148+St,+Surrey,+BC+V3R+3X2&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://www.google.com/maps?q=10167+148+St,+Surrey,+BC+V3R+3X2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#1a3a5c] font-semibold hover:text-[#D4AF37] transition-colors duration-300"
+            >
+              <MapPinIcon />
+              Get Directions
+            </a>
+          </div>
+
+          {/* Right: Form */}
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-3xl font-bold font-heading text-[#1a3a5c] mb-2">Send a Message</h2>
+            <p className="text-gray-500 text-sm mb-6">We'd love to hear from you.</p>
+            <form className="space-y-5" onSubmit={handleSend}>
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
+                  Your Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  placeholder="John Doe"
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
+                  Your Email <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder="john@example.com"
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  value={subject}
+                  onChange={e => setSubject(e.target.value)}
+                  placeholder="How can we help?"
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700">Your Message</label>
+                <textarea
+                  id="message"
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
+                  rows={5}
+                  placeholder="Write your message here..."
+                  className={inputClass}
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-[#1a3a5c] text-white font-bold py-4 px-8 rounded-xl hover:bg-[#0f2540] transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl text-base"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </div>
