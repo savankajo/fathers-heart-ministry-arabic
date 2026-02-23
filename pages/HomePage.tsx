@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import SEO from '../components/SEO';
 import {
   HERO_SLIDES, TEAM_MEMBERS, GALLERY_ITEMS, SERVICE_EVENTS, PLAYLISTS
 } from '../constants';
 import { GalleryItem, ServiceEvent } from '../types';
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    HERO SLIDER
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const HeroSlider: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [loaded, setLoaded] = useState<boolean[]>(HERO_SLIDES.map(() => false));
@@ -50,7 +50,7 @@ const HeroSlider: React.FC = () => {
             Faith is our solid Ground
           </h1>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Pentecostal Assemblies of Canada — Reaching Nations for Christ
+            Pentecostal Assemblies of Canada â€” Reaching Nations for Christ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -95,9 +95,9 @@ const HeroSlider: React.FC = () => {
   );
 };
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    ABOUT US
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const AboutSection: React.FC = () => (
   <section id="about" className="py-20 md:py-28 bg-white">
     <div className="container mx-auto px-4 max-w-6xl">
@@ -133,7 +133,7 @@ const AboutSection: React.FC = () => (
             <strong className="text-[#1a3a5c]">Carrying the Gospel Where It's Never Been Before.</strong>
           </p>
           <p className="text-gray-600 leading-relaxed mb-8">
-            Sharing the good news. Spreading the Gospel. Reaching nations for Christ — that's what we are all about, and it starts by developing strong Local churches. So with God's guidance, we seek to come alongside leaders in the countries where we serve to help them as they work diligently to reach their communities for Christ. Through vital resources and support, we help these ministers of the Gospel as they seek to carry out Christ's Great Commission.
+            Sharing the good news. Spreading the Gospel. Reaching nations for Christ â€” that's what we are all about, and it starts by developing strong Local churches. So with God's guidance, we seek to come alongside leaders in the countries where we serve to help them as they work diligently to reach their communities for Christ. Through vital resources and support, we help these ministers of the Gospel as they seek to carry out Christ's Great Commission.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -155,9 +155,9 @@ const AboutSection: React.FC = () => (
   </section>
 );
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    OUR TEAM
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const TeamSection: React.FC = () => (
   <section className="py-20 md:py-28 bg-gray-50">
     <div className="container mx-auto px-4 max-w-6xl">
@@ -193,9 +193,9 @@ const TeamSection: React.FC = () => (
   </section>
 );
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    QUOTE BANNER
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const QuoteBanner: React.FC = () => (
   <section className="relative py-20 overflow-hidden">
     <div className="absolute inset-0">
@@ -219,9 +219,9 @@ const QuoteBanner: React.FC = () => (
   </section>
 );
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    GALLERY / VIDEO PRODUCTION
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const GallerySection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'ceremony' | 'events' | 'short'>('all');
   const tabs: { key: 'all' | 'ceremony' | 'events' | 'short'; label: string }[] = [
@@ -290,16 +290,13 @@ const GalleryCard: React.FC<{ item: GalleryItem }> = ({ item }) => (
         <span className="text-white/80 text-xs">{item.likes} {item.likes === 1 ? 'Like' : 'Likes'}</span>
       </div>
     </div>
-    {/* Category badge */}
-    <div className="absolute top-3 right-3 bg-[#D4AF37] text-black text-xs font-bold px-2 py-1 rounded-full capitalize">
-      {item.category}
-    </div>
+    {/* NO category badge â€” removed as requested */}
   </div>
 );
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    SERVICES & EVENTS
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const categoryColor: Record<string, string> = {
   saturday: 'bg-blue-100 text-blue-800 border-blue-200',
   social: 'bg-green-100 text-green-800 border-green-200',
@@ -311,85 +308,37 @@ const categoryDot: Record<string, string> = {
   media: 'bg-purple-500',
 };
 
-const ServicesSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'saturday' | 'social' | 'media'>('all');
-  const tabs: { key: 'all' | 'saturday' | 'social' | 'media'; label: string }[] = [
-    { key: 'all', label: 'All Events' },
-    { key: 'saturday', label: 'Saturday Meeting' },
-    { key: 'social', label: 'Social Gathering' },
-    { key: 'media', label: 'Media Team Meetup' },
-  ];
-
-  const filtered = activeTab === 'all'
-    ? SERVICE_EVENTS
-    : SERVICE_EVENTS.filter(e => e.category === activeTab);
-
-  return (
-    <section id="services" className="py-20 md:py-28 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12">
-          <p className="text-[#D4AF37] font-semibold tracking-[0.3em] text-sm uppercase mb-3">What We Offer</p>
-          <h2 className="text-4xl md:text-5xl font-bold font-heading text-[#1a3a5c] mb-4">
-            SERVICES <span className="text-[#D4AF37]">&amp; events</span>
-          </h2>
-          <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full mb-8" />
-
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {tabs.map(tab => (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === tab.key
-                  ? 'bg-[#1a3a5c] text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                  }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Events table */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          {/* Header */}
-          <div className="grid grid-cols-12 bg-[#1a3a5c] text-white text-sm font-semibold px-6 py-4">
-            <div className="col-span-1" />
-            <div className="col-span-5 md:col-span-4">Event</div>
-            <div className="col-span-6 md:col-span-3">Time</div>
-            <div className="hidden md:block md:col-span-4">Details</div>
-          </div>
-
-          {filtered.length === 0 && (
-            <p className="text-center text-gray-500 py-12">No events in this category.</p>
-          )}
-
-          {filtered.map((event, idx) => (
-            <EventRow key={event.id} event={event} isLast={idx === filtered.length - 1} />
-          ))}
-        </div>
-
-        {/* Legend */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
-          {[
-            { label: 'Saturday Meeting', cat: 'saturday' },
-            { label: 'Social Gathering', cat: 'social' },
-            { label: 'Media Team Meetup', cat: 'media' },
-          ].map(l => (
-            <div key={l.cat} className="flex items-center gap-2 text-sm text-gray-600">
-              <span className={`w-3 h-3 rounded-full ${categoryDot[l.cat]}`} />
-              {l.label}
-            </div>
-          ))}
-        </div>
+const ServicesSection: React.FC = () => (
+  <section id="services" className="py-20 md:py-28 bg-gray-50">
+    <div className="container mx-auto px-4 max-w-6xl">
+      <div className="text-center mb-12">
+        <p className="text-[#D4AF37] font-semibold tracking-[0.3em] text-sm uppercase mb-3">What We Offer</p>
+        <h2 className="text-4xl md:text-5xl font-bold font-heading text-[#1a3a5c] mb-4">
+          SERVICES <span className="text-[#D4AF37]">&amp; Events</span>
+        </h2>
+        <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full mb-4" />
+        <p className="text-gray-500 max-w-xl mx-auto">Join us every week. More events will be added soon.</p>
       </div>
-    </section>
-  );
-};
+
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-3xl mx-auto">
+        <div className="grid grid-cols-12 bg-[#1a3a5c] text-white text-sm font-semibold px-6 py-4">
+          <div className="col-span-1" />
+          <div className="col-span-5 md:col-span-4">Event</div>
+          <div className="col-span-6 md:col-span-4">Time</div>
+          <div className="hidden md:block md:col-span-3">Details</div>
+        </div>
+        {SERVICE_EVENTS.map((event, idx) => (
+          <EventRow key={event.id} event={event} isLast={idx === SERVICE_EVENTS.length - 1} />
+        ))}
+      </div>
+
+      <p className="text-center text-gray-400 text-sm mt-6 italic">More events coming soon â€” stay connected!</p>
+    </div>
+  </section>
+);
 
 const EventRow: React.FC<{ event: ServiceEvent; isLast: boolean }> = ({ event, isLast }) => (
-  <div className={`grid grid-cols-12 items-center px-6 py-4 hover:bg-gray-50 transition-colors duration-200 ${!isLast ? 'border-b border-gray-100' : ''}`}>
+  <div className={`grid grid-cols-12 items-center px-6 py-5 hover:bg-gray-50 transition-colors duration-200 ${!isLast ? 'border-b border-gray-100' : ''}`}>
     <div className="col-span-1">
       <span className={`w-3 h-3 rounded-full block ${categoryDot[event.category]}`} />
     </div>
@@ -398,18 +347,18 @@ const EventRow: React.FC<{ event: ServiceEvent; isLast: boolean }> = ({ event, i
         {event.title}
       </span>
     </div>
-    <div className="col-span-6 md:col-span-3 text-gray-700 text-sm font-medium">
-      {event.timeStart} – {event.timeEnd}
+    <div className="col-span-6 md:col-span-4 text-gray-700 text-sm font-medium">
+      {event.timeStart}{event.timeEnd ? ` â€“ ${event.timeEnd}` : ''}
     </div>
-    <div className="hidden md:block md:col-span-4 text-gray-500 text-sm">
+    <div className="hidden md:block md:col-span-3 text-gray-500 text-sm">
       {event.description || <span className="italic text-gray-300">Weekly gathering</span>}
     </div>
   </div>
 );
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    CONTACT US
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const ContactSection: React.FC = () => (
   <section id="contact" className="py-20 md:py-28 bg-white">
     <div className="container mx-auto px-4 max-w-6xl">
@@ -454,7 +403,7 @@ const ContactSection: React.FC = () => (
             </div>
             <div>
               <h3 className="text-lg font-bold text-[#1a3a5c] mb-1">Service Times</h3>
-              <p className="text-gray-600">Every Saturday from 4:00 PM</p>
+              <p className="text-gray-600">Every Saturday at 1:00 PM</p>
             </div>
           </div>
 
@@ -492,7 +441,7 @@ const ContactSection: React.FC = () => (
 
 const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sent'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
@@ -501,9 +450,7 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent(form.subject || "Message from Father's Heart Church Website");
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-    );
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
     const mailtoLink = `mailto:savan.kajo@yahoo.com?subject=${subject}&body=${body}`;
     window.open(mailtoLink, '_blank');
     setStatus('sent');
@@ -518,7 +465,7 @@ const ContactForm: React.FC = () => {
       <h3 className="text-2xl font-bold font-heading text-[#1a3a5c] mb-6">Send us a Message</h3>
       {status === 'sent' && (
         <div className="bg-blue-50 border border-blue-200 text-blue-800 rounded-xl p-4 mb-6 flex items-start gap-3">
-          <span className="text-2xl">✉️</span>
+          <span className="text-2xl">âœ‰ï¸</span>
           <div>
             <p className="font-bold">Your email app should open now!</p>
             <p className="text-sm mt-1">Your message is pre-filled and ready to send to <strong>savan.kajo@yahoo.com</strong>. Just press Send in your email app.</p>
@@ -546,117 +493,16 @@ const ContactForm: React.FC = () => {
           type="submit"
           className="w-full bg-[#1a3a5c] text-white font-bold py-4 px-8 rounded-xl hover:bg-[#0f2540] transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
         >
-          ✉️ Send Message
+          âœ‰ï¸ Send Message
         </button>
       </form>
     </div>
   );
 };
 
-/* ─────────────────────────────────────────────
-   GIVE / DONATION SECTION
-───────────────────────────────────────────── */
-const GiveSection: React.FC = () => (
-  <section id="give" className="py-20 md:py-28 bg-[#1a3a5c]">
-    <div className="container mx-auto px-4 max-w-6xl">
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        {/* Left - Text */}
-        <div className="text-white">
-          <p className="text-[#D4AF37] font-semibold tracking-[0.3em] text-sm uppercase mb-3">Partner With Us</p>
-          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 leading-tight">
-            GIVE US YOUR OPINION
-          </h2>
-          <div className="w-16 h-1 bg-[#D4AF37] mb-8 rounded-full" />
-          <p className="text-white/80 text-lg leading-relaxed mb-8">
-            This should land the text for the Give Donation section, and to the right would show the donation form and the online payment gateway information. So we need a call to action paragraph that describes a bit about the ministry, the needs, and the goal.
-          </p>
-          <p className="text-white/70 leading-relaxed mb-8">
-            Your generous giving helps us carry the Gospel to nations, support local churches, and equip ministers of the Gospel to reach their communities. Every gift makes a difference in the lives of those we serve.
-          </p>
-
-          {/* Donation Buttons */}
-          <div className="space-y-4">
-            <h3 className="text-[#D4AF37] font-bold text-lg">Make a Donation:</h3>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://tithe.ly/give_new/www/#/tithely/give-one-time/7590166"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-[#D4AF37] text-black font-bold py-4 px-6 rounded-xl text-center hover:bg-[#c49b2a] transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
-              >
-                🇨🇦 Inside Canada
-              </a>
-              <a
-                href="https://www.canadahelps.org/en/charities/fathers-heart-ministry/?fbclid=IwY2xjawG4f45leHRuA2FlbQIxMAABHe2srJ5VNPVAPPj-glPnNGZurDMa9PGvDt5PPRPddRxvQoM4K0_mfu0SJQ_aem_-XJ6oXUSvUS8vKYvRrlRhg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-white text-[#1a3a5c] font-bold py-4 px-6 rounded-xl text-center hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 shadow-lg"
-              >
-                🌍 Outside Canada
-              </a>
-            </div>
-            <p className="text-white/50 text-xs">You will be redirected to our secure donation platform.</p>
-          </div>
-        </div>
-
-        {/* Right - Opinion / Contact Form */}
-        <div className="bg-white rounded-2xl p-8 shadow-2xl">
-          <h3 className="text-2xl font-bold font-heading text-[#1a3a5c] mb-2">Share Your Thoughts</h3>
-          <p className="text-gray-500 text-sm mb-6">We value your feedback and would love to hear from you.</p>
-          <OpinionForm />
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const OpinionForm: React.FC = () => {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm(f => ({ ...f, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const mailtoLink = `mailto:savan.kajo@yahoo.com?subject=${encodeURIComponent(form.subject || 'Opinion from Website')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`)}`;
-    window.location.href = mailtoLink;
-  };
-
-  const inputClass =
-    'w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#1a3a5c] focus:outline-none transition-colors duration-300 text-gray-700 placeholder-gray-400 text-sm';
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Your Name <span className="text-red-500">*</span></label>
-        <input required name="name" value={form.name} onChange={handleChange} type="text" placeholder="Your full name" className={inputClass} />
-      </div>
-      <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Your Email <span className="text-red-500">*</span></label>
-        <input required name="email" value={form.email} onChange={handleChange} type="email" placeholder="your@email.com" className={inputClass} />
-      </div>
-      <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Subject</label>
-        <input name="subject" value={form.subject} onChange={handleChange} type="text" placeholder="Subject" className={inputClass} />
-      </div>
-      <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">Your Message</label>
-        <textarea name="message" value={form.message} onChange={handleChange} rows={4} placeholder="Write your opinion or message..." className={inputClass} />
-      </div>
-      <button
-        type="submit"
-        className="w-full bg-[#D4AF37] text-black font-bold py-3 px-8 rounded-xl hover:bg-[#c49b2a] transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg text-sm"
-      >
-        Submit
-      </button>
-    </form>
-  );
-};
-
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    SERMONS PREVIEW (links to /sermons page)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SermonsPreview: React.FC = () => {
   const featured = PLAYLISTS.slice(0, 3);
   return (
@@ -707,14 +553,14 @@ const SermonsPreview: React.FC = () => {
   );
 };
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    HOME PAGE (assembles all sections)
-───────────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const HomePage: React.FC = () => (
   <div className="font-body">
     <SEO
       title="Home"
-      description="Father's Heart Church in Surrey, BC — Pentecostal Assemblies of Canada. Carrying the Gospel where it's never been before. Join us every Saturday at 4 PM."
+      description="Father's Heart Church in Surrey, BC â€” Pentecostal Assemblies of Canada. Carrying the Gospel where it's never been before. Join us every Saturday at 1 PM."
     />
     <HeroSlider />
     <AboutSection />
@@ -724,7 +570,6 @@ const HomePage: React.FC = () => (
     <SermonsPreview />
     <ServicesSection />
     <ContactSection />
-    <GiveSection />
   </div>
 );
 

@@ -8,7 +8,6 @@ const NAV_ITEMS = [
   { label: 'Gallery', href: '/#gallery', anchor: 'gallery' },
   { label: 'Services', href: '/#services', anchor: 'services' },
   { label: 'Contact Us', href: '/#contact', anchor: 'contact' },
-  { label: 'Give', href: '/#give', anchor: 'give' },
 ];
 
 const EXTRA_LINKS = [
@@ -84,8 +83,7 @@ const Header: React.FC = () => {
               </NavLink>
             ))}
             <a
-              href="/#give"
-              onClick={e => handleAnchorClick(e, 'give')}
+              href="/donations"
               className="ml-3 bg-[#D4AF37] hover:bg-[#c49b2a] text-black font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg"
             >
               Donate
@@ -131,8 +129,8 @@ const Header: React.FC = () => {
               </NavLink>
             ))}
             <a
-              href="/#give"
-              onClick={e => handleAnchorClick(e, 'give')}
+              href="/donations"
+              onClick={() => setIsMenuOpen(false)}
               className="block mt-2 bg-[#D4AF37] text-black font-bold px-4 py-3 rounded-xl text-center hover:bg-[#c49b2a] transition-colors duration-200"
             >
               Donate Now
