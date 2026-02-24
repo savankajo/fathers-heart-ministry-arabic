@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import DonationsPage from './pages/DonationsPage';
 import PodcastPage from './pages/PodcastPage';
 import ScrollToTop from './components/ScrollToTop.tsx';
+import AboutUsPage from './pages/AboutUsPage';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
               <Route path="/podcast" element={<PodcastPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/donations" element={<DonationsPage />} />
+              <Route path="/about" element={<AboutUsPage />} />
             </Routes>
           </main>
           <Footer />

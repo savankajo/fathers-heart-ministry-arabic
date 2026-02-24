@@ -4,13 +4,13 @@ import { MenuIcon, XIcon } from './icons';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/', anchor: '' },
-  { label: 'About Us', href: '/#about', anchor: 'about' },
   { label: 'Gallery', href: '/#gallery', anchor: 'gallery' },
   { label: 'Services', href: '/#services', anchor: 'services' },
   { label: 'Contact Us', href: '/#contact', anchor: 'contact' },
 ];
 
 const EXTRA_LINKS = [
+  { label: 'About Us', to: '/about' },
   { label: 'Sermons', to: '/sermons' },
   { label: 'Podcast', to: '/podcast' },
 ];

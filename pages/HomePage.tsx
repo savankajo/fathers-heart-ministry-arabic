@@ -50,11 +50,11 @@ const HeroSlider: React.FC = () => {
             Faith is our solid Ground
           </h1>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Pentecostal Assemblies of Canada â€” Reaching Nations for Christ
+            Pentecostal Assemblies of Canada — Reaching Nations for Christ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#about"
+              href="/about"
               className="bg-[#D4AF37] text-black font-bold py-4 px-10 rounded-full text-base hover:bg-[#c49b2a] transition-all duration-300 transform hover:-translate-y-1 shadow-xl"
             >
               About Us
