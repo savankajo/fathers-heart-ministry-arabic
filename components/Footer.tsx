@@ -10,12 +10,11 @@ const socialLinks = [
 
 const quickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/#about' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Service', href: '/service' },
   { label: 'Gallery', href: '/#gallery' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Contact Us', href: '/#contact' },
-  { label: 'Sermons', href: '/sermons' },
-  { label: 'Podcast', href: '/podcast' },
+  { label: 'Contact Us', href: '/contact' },
+  { label: 'Donate', href: '/donations' },
 ];
 
 const Footer: React.FC = () => {

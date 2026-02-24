@@ -2,24 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { MenuIcon, XIcon } from './icons';
 
+// Navigation links (left side)
 const NAV_ITEMS = [
-  { label: 'Home', href: '/', anchor: '' },
-  { label: 'Gallery', href: '/#gallery', anchor: 'gallery' },
-  { label: 'Services', href: '/#services', anchor: 'services' },
-  { label: 'Contact Us', href: '/#contact', anchor: 'contact' },
-];
-
-const EXTRA_LINKS = [
-  { label: 'About Us', to: '/about' },
-  { label: 'Sermons', to: '/sermons' },
-  { label: 'Podcast', to: '/podcast' },
+  { label: 'Home', to: '/', exact: true },
+  { label: 'About Us', to: '/about', exact: false },
+  { label: 'Service', to: '/service', exact: false },
+  { label: 'Gallery', to: '/#gallery', exact: false, isAnchor: true },
 ];
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -27,22 +21,26 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
-    if (isHome && anchor) {
-      e.preventDefault();
-      const el = document.getElementById(anchor);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-      setIsMenuOpen(false);
+  const handleGalleryClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    if (location.pathname === '/') {
+      const el = document.getElementById('gallery');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      setIsMenuOpen(false);
+      window.location.href = '/#gallery';
     }
   };
 
   const navBg = scrolled
     ? 'bg-white/95 backdrop-blur-md shadow-lg'
     : 'bg-white shadow-md';
+
+  const linkClass = (isActive: boolean) =>
+    `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 relative group ${isActive
+      ? 'text-[#1a3a5c] bg-blue-50'
+      : 'text-gray-700 hover:text-[#1a3a5c] hover:bg-blue-50'
+    }`;
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${navBg}`}>
@@ -59,35 +57,45 @@ const Header: React.FC = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {NAV_ITEMS.map(item => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={e => handleAnchorClick(e, item.anchor)}
-                className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#1a3a5c] hover:bg-blue-50 rounded-lg transition-all duration-200 relative group"
-              >
-                {item.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#D4AF37] group-hover:w-4/5 transition-all duration-300 rounded-full" />
-              </a>
-            ))}
-            {EXTRA_LINKS.map(link => (
-              <NavLink
-                key={link.label}
-                to={link.to}
-                className={({ isActive }) =>
-                  `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${isActive ? 'bg-[#1a3a5c] text-white' : 'text-gray-700 hover:text-[#1a3a5c] hover:bg-blue-50'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-            <a
-              href="/donations"
-              className="ml-3 bg-[#D4AF37] hover:bg-[#c49b2a] text-black font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+            {NAV_ITEMS.map(item =>
+              item.isAnchor ? (
+                <a
+                  key={item.label}
+                  href={item.to}
+                  onClick={handleGalleryClick}
+                  className={linkClass(false)}
+                >
+                  {item.label}
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#D4AF37] group-hover:w-4/5 transition-all duration-300 rounded-full" />
+                </a>
+              ) : (
+                <NavLink
+                  key={item.label}
+                  to={item.to}
+                  end={item.exact}
+                  className={({ isActive }) => linkClass(isActive)}
+                >
+                  {({ isActive }) => (
+                    <>
+                      {item.label}
+                      <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-[#D4AF37] transition-all duration-300 rounded-full ${isActive ? 'w-4/5' : 'w-0 group-hover:w-4/5'}`} />
+                    </>
+                  )}
+                </NavLink>
+              )
+            )}
+            {/* Donate button */}
+            <NavLink
+              to="/donations"
+              className={({ isActive }) =>
+                `ml-3 font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg ${isActive
+                  ? 'bg-[#c49b2a] text-black'
+                  : 'bg-[#D4AF37] hover:bg-[#c49b2a] text-black'
+                }`
+              }
             >
               Donate
-            </a>
+            </NavLink>
           </nav>
 
           {/* Mobile hamburger */}
@@ -105,36 +113,38 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="px-4 py-4 space-y-1">
-            {NAV_ITEMS.map(item => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={e => handleAnchorClick(e, item.anchor)}
-                className="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-blue-50 hover:text-[#1a3a5c] transition-all duration-200"
-              >
-                {item.label}
-              </a>
-            ))}
-            {EXTRA_LINKS.map(link => (
-              <NavLink
-                key={link.label}
-                to={link.to}
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block px-4 py-3 font-medium rounded-xl transition-all duration-200 ${isActive ? 'bg-[#1a3a5c] text-white' : 'text-gray-700 hover:bg-blue-50 hover:text-[#1a3a5c]'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-            <a
-              href="/donations"
+            {NAV_ITEMS.map(item =>
+              item.isAnchor ? (
+                <a
+                  key={item.label}
+                  href={item.to}
+                  onClick={handleGalleryClick}
+                  className="block px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-blue-50 hover:text-[#1a3a5c] transition-all duration-200"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={item.label}
+                  to={item.to}
+                  end={item.exact}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `block px-4 py-3 font-medium rounded-xl transition-all duration-200 ${isActive ? 'bg-[#1a3a5c] text-white' : 'text-gray-700 hover:bg-blue-50 hover:text-[#1a3a5c]'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              )
+            )}
+            <NavLink
+              to="/donations"
               onClick={() => setIsMenuOpen(false)}
               className="block mt-2 bg-[#D4AF37] text-black font-bold px-4 py-3 rounded-xl text-center hover:bg-[#c49b2a] transition-colors duration-200"
             >
               Donate Now
-            </a>
+            </NavLink>
           </div>
         </div>
       )}
