@@ -51,12 +51,12 @@ export const HERO_SLIDES = [
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: 'Pastor Peter',
+    name: 'Pastor/ Peter Ramsis',
     role: 'Senior Pastor',
     imageUrl: '/pastor-peter.jpg',
   },
   {
-    name: 'Lilian',
+    name: 'Pastor/ Liliane Ramsis',
     role: 'Worship Team Leader',
     imageUrl: '/pastor-lilian.jpg',
   },
@@ -65,14 +65,14 @@ export const TEAM_MEMBERS: TeamMember[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '1',
-    title: "Pastor Peter",
+    title: "Pastor/ Peter Ramsis",
     imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2023/06/DSC01319-scaled.jpg',
     category: 'ceremony',
     likes: 3,
   },
   {
     id: '2',
-    title: "Lilian",
+    title: "Pastor/ Liliane Ramsis",
     imageUrl: 'https://fathersheartchurch.ca/wp-content/uploads/2021/07/DSC01397-scaled.jpg',
     category: 'events',
     likes: 6,
