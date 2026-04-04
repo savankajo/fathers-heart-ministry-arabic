@@ -7,7 +7,8 @@ import HomePage from './pages/HomePage';
 import ServicePage from './pages/ServicePage';
 import ContactPage from './pages/ContactPage';
 import DonationsPage from './pages/DonationsPage';
-import AboutUsPage from './pages/AboutUsPage';
+import PodcastPage from './pages/PodcastPage';
+import ArticlesPage from './pages/ArticlesPage';
 import ScrollToTop from './components/ScrollToTop.tsx';
 
 const App = () => {
@@ -21,7 +22,9 @@ const App = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutUsPage />} />
-              <Route path="/service" element={<ServicePage />} />
+              <Route path="/sermons" element={<SermonsPage />} />
+              <Route path="/podcast" element={<PodcastPage />} />
+              <Route path="/articles" element={<ArticlesPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/donations" element={<DonationsPage />} />
               {/* Keep old URLs working */}

@@ -1,6 +1,6 @@
 import { TeamMember, Playlist, Page, GalleryItem, ServiceEvent } from './types';
 
-export const NAV_LINKS: Page[] = ['Home', 'About Us', 'Gallery', 'Services', 'Contact', 'Give'];
+export const NAV_LINKS: Page[] = ['Home', 'About Us', 'Articles', 'Sermons', 'Contact', 'Podcast', 'Donations'];
 
 export const NAV_LABELS: Record<Page, string> = {
   Home: 'Home',
@@ -12,6 +12,7 @@ export const NAV_LABELS: Record<Page, string> = {
   Sermons: 'Sermons',
   Podcast: 'Podcast',
   Donations: 'Donations',
+  Articles: 'مقالات',
 };
 
 export const PAGE_PATHS: Record<Page, string> = {
@@ -24,6 +25,7 @@ export const PAGE_PATHS: Record<Page, string> = {
   Sermons: '/sermons',
   Podcast: '/podcast',
   Donations: '/donations',
+  Articles: '/articles',
 };
 
 export const HERO_SLIDES = [
@@ -190,6 +192,13 @@ export const CONTENT = {
     insideCanada: "Inside Canada",
     outsideCanada: "Outside Canada",
     redirectText: "You will be redirected to our secure donation platform."
+  },
+  articles: {
+    title: "مقالات",
+    subtitle: "رؤى روحية وتعاليم من قلب الآب. غذي روحك بكلمة الله.",
+    searchPlaceholder: "بحث في المقالات بالعنوان أو الوصف...",
+    readMore: "اقرأ المزيد",
+    noResults: "لم يتم العثور على مقالات تطابق بحثك."
   }
 };
 
