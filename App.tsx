@@ -4,12 +4,10 @@ import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import AboutUsPage from './pages/AboutUsPage';
 import ServicePage from './pages/ServicePage';
-import SermonsPage from './pages/PlaylistsPage';
 import ContactPage from './pages/ContactPage';
 import DonationsPage from './pages/DonationsPage';
-import PodcastPage from './pages/PodcastPage';
+import AboutUsPage from './pages/AboutUsPage';
 import ArticlesPage from './pages/ArticlesPage';
 import ScrollToTop from './components/ScrollToTop.tsx';
 
@@ -17,21 +15,20 @@ const App = () => {
   return (
     <HelmetProvider>
       <Router>
-        <div className="bg-cream min-h-screen text-gray-800 font-body flex flex-col">
+        <div className="min-h-screen text-gray-800 font-body flex flex-col">
           <ScrollToTop />
           <Header />
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutUsPage />} />
-              <Route path="/service" element={<ServicePage />} />
-              <Route path="/sermons" element={<SermonsPage />} />
-              <Route path="/podcast" element={<PodcastPage />} />
               <Route path="/articles" element={<ArticlesPage />} />
+              <Route path="/service" element={<ServicePage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/donations" element={<DonationsPage />} />
               {/* Keep old URLs working */}
-              <Route path="/services" element={<Navigate to="/service" replace />} />
+              <Route path="/sermons" element={<Navigate to="/service" replace />} />
+              <Route path="/podcast" element={<Navigate to="/service" replace />} />
             </Routes>
           </main>
           <Footer />
